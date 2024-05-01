@@ -1,0 +1,24 @@
+{% extends "templates/base.html" %}
+{% block title %}{{ _("Indiaskyline") }}{% endblock %}
+{% block content %}
+<div class="container">
+    <h2>{{ _("List") }}</h2>
+    <div class="mt-18">
+        {% for flight in flights %}
+        <div class="mt-8">
+            <h5>{{ flight.airplane }}</h5>
+            <div>
+                {{ flight.source_airport_code }} -> {{ flight.destination_airport_code }} <br>
+
+                {{ frappe.utils.format_date(flight.date_of_departure, "d MMMM, YYYY") }} | {{ flight.time_of_departure }} |     
+                {{ frappe.utils.format_duration(flight.duration) }}<br>
+            </div>
+            <a href="/view_details/{{ flight.name }}" class="mt-8">
+                {{ _("View Flight") }}
+            </a>            
+            <br>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,151 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{tenant}-{shop}",
+ "creation": "2024-04-27 19:10:42.835654",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_yklz",
+  "amended_from",
+  "tenant",
+  "shop",
+  "shop_owner",
+  "receipt_number",
+  "tenant_signature",
+  "column_break_rjra",
+  "payment_date",
+  "shop_id",
+  "payment_amount",
+  "owner_signature",
+  "amount_paid",
+  "payment_method",
+  "payment"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_yklz",
+   "fieldtype": "Section Break",
+   "label": "Rent Payment Receipt"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Rent Receipt",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Tenant",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_rjra",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Payment Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "shop",
+   "fieldtype": "Link",
+   "label": "Shop",
+   "options": "Shop Information"
+  },
+  {
+   "fieldname": "payment_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Payment Amount",
+   "reqd": 1
+  },
+  {
+   "fieldname": "shop_owner",
+   "fieldtype": "Data",
+   "label": "Shop Owner",
+   "reqd": 1
+  },
+  {
+   "fieldname": "receipt_number",
+   "fieldtype": "Data",
+   "label": "Receipt Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tenant_signature",
+   "fieldtype": "Signature",
+   "label": "Tenant Signature",
+   "reqd": 1
+  },
+  {
+   "fieldname": "shop_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Shop ID",
+   "options": "Shop Lease Agreement",
+   "reqd": 1
+  },
+  {
+   "fieldname": "owner_signature",
+   "fieldtype": "Signature",
+   "label": "Owner Signature",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amount_paid",
+   "fieldtype": "Currency",
+   "label": "Amount Paid",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payment_method",
+   "fieldtype": "Data",
+   "label": "Payment Method",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payment",
+   "fieldtype": "Select",
+   "label": "Payment ",
+   "options": "Paid\nHalf Paid\nUnpaid",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-04-29 16:52:09.570810",
+ "modified_by": "Administrator",
+ "module": "Shop Management",
+ "name": "Rent Receipt",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

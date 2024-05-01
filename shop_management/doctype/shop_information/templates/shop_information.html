@@ -1,0 +1,33 @@
+<!-- {% extends "templates/web.html" %}
+
+{% block page_content %}
+<h1>{{ title |e }}</h1>
+{% endblock %} -->
+
+<!-- this is a sample default web page template -->
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<h1>{{ doc.name |e }}</h1>
+<h3>{{ _("Shop Details") }}</h3>
+<div>
+    <b>{{ _("Shop Owner") }}</b>: {{ doc.shop_owner }}<br>
+    <b>{{ _("Shop Type") }}</b>: {{ doc.shop_type }}<br>
+    <b>{{ _("Status") }}</b>: {{ doc.status }}<br>
+    <b>{{ _("Area (In sqft)") }}</b>: {{ doc.area }}<br>
+    <b>{{ _("Airport") }}</b>: {{ doc.airport }}</br>
+    <b>{{ _("Email ID") }}</b>: {{ doc.email_id }}<br>
+    <b>{{ _("Mobile Number") }}</b>: {{ doc.mobile_number }}<br>
+
+    {% if doc.status == "Available" %}
+    <a class="btn btn-primary btn-md" href="http://airplane:8000/shop-booking/new">
+        {{ _("Book a Shop") }}
+    </a>
+    
+    {% else %}
+    <a class="btn btn-primary btn-md" href="http://ashu.airline:8000/shops-management">
+        {{ _("Return to Home Page") }}
+    </a>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "templates/base.html" %}
+
+{% block title %}
+    {{ _("AIRLINES") }}
+{% endblock %}  
+
+{% block content %}
+<div class="container">
+    {% if flights %}
+        {% for flight in flights %}
+            <div class="mb-10">
+                <h2>{{ flight.name }}</h2>
+                <h2>{{ _("Flight Details") }}</h2>
+                <ul>
+                    <li><b>{{ _("Airline") }}</b>: {{ flight.airplane }}</li>
+                    <li>{{ flight.source_airport_code }} &rarr; {{ flight.destination_airport_code }}</li>
+                    <li>{{ flight.formatted_date_of_departure }} | {{ flight.time_of_departure }}</li>
+                    <li>
+                        {% if flight.formatted_duration %}
+                        Duration: {{ flight.formatted_duration }}<br>
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+            <a class="btn btn-primary btn-md" href="http://airplane:8000/book-flight/new">
+                {{ _("Book a Flight") }}
+            </a>
+        {% endfor %}  
+    {% endif %}
+</div>
+{% endblock %}
